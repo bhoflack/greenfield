@@ -9,6 +9,8 @@ import org.apache.wicket.markup.html.basic.Label;
 
 public final class ParameterPage extends WebPage {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * This factory should be used by other classes.
      * @param name the person's name.

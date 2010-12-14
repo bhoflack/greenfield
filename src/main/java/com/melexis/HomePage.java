@@ -3,10 +3,9 @@ package com.melexis;
 import java.util.Date;
 
 import org.apache.wicket.PageParameters;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.WebPage;
-
 import org.apache.wicket.RequestCycle;
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 
 /**
@@ -14,11 +13,9 @@ import org.apache.wicket.markup.html.link.Link;
  */
 public class HomePage extends WebPage {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	// TODO Add any page properties or variables here
-
-    /**
+  /**
 	 * Constructor that is invoked when page is invoked without a session.
 	 *
 	 * @param parameters
