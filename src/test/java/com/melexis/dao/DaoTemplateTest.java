@@ -24,6 +24,9 @@ public class DaoTemplateTest {
             return (o.name != null)? o.name.equals(name): name == null;
         }
 
+        @Override public String toString() {
+            return name;
+        }
     }
 
     // Mock class that represents a DaoBackend.
@@ -55,9 +58,10 @@ public class DaoTemplateTest {
     @Test public void singleResult() {
         dao.withSingleResult("from Foo where id=1", new FunctionBody<Foo>() {
 
-                @Override public Foo invoke(Foo foo) {
-                    foo.name = "blaat";
-                    return foo;
+                @Override public Foo invoke(final Foo foo) {
+                    final Foo bar = new Foo();
+                    bar.name = "blaat";
+                    return bar;
                 }
             });
 

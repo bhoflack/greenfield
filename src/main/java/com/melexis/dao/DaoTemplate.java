@@ -18,11 +18,12 @@ public final class DaoTemplate<T> {
      * @param query The query to be executed.
      * @param body The body of the function.
      **/
-    public final T withSingleResult(final String query, final FunctionBody<T> body) {
+    public final void withSingleResult(final String query, final FunctionBody<T> body) {
         final List<T> result = backend.executeQuery(query);
         final T first = result.get(0);
+        final T r = body.invoke(first);
 
-        return body.invoke(first);
+        backend.update(r);
     }
 
 }
