@@ -5,13 +5,8 @@
 	<artifactId>greenfield</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<!-- TODO project name  -->
-	<name>quickstart</name>
+	<name>greenfield</name>
 	<description></description>
-	<!--
-		TODO <organization> <name>company name</name> <url>company url</url>
-		</organization>
-	-->
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -32,11 +27,6 @@
 			<artifactId>wicket</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
-		<!--
-			OPTIONAL <dependency> <groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-			<version>${wicket.version}</version> </dependency>
-		-->
 
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>

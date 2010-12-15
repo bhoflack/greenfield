@@ -8,5 +8,4 @@ public interface FunctionBody<T> {
      * @return the updated entity
      **/
     T invoke(T entity);
-
 }
