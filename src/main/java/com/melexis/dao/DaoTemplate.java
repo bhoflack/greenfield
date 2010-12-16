@@ -13,17 +13,22 @@ public final class DaoTemplate<T> {
     }
 
     /**
-     * Execute query,  invoke body with the first result and
+     * Execute query,  invoke body for each result and
      * update the data in the db.
      * @param query The query to be executed.
      * @param body The body of the function.
+     * @return the number of updated items.
      **/
-    public final void withSingleResult(final String query, final FunctionBody<T> body) {
+    public final int withResult(final String query, final FunctionBody<T> body) {
         final List<T> result = backend.executeQuery(query);
-        final T first = result.get(0);
-        final T r = body.invoke(first);
 
-        backend.update(r);
+        // iterate all results
+        for (T item : result) {
+            final T r = body.invoke(item);
+            backend.update(r);
+        }
+
+        return result.size();
     }
 
 }

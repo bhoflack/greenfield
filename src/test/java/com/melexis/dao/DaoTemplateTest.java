@@ -13,6 +13,7 @@ public class DaoTemplateTest {
     private final static class Foo {
 
         public String name;
+        public int age;
 
         @Override public boolean equals(Object other) {
             if (!(other instanceof Foo)) {
@@ -56,7 +57,7 @@ public class DaoTemplateTest {
     }
 
     @Test public void singleResult() {
-        dao.withSingleResult("from Foo where id=1", new FunctionBody<Foo>() {
+        final int updated = dao.withResult("from Foo where id=1", new FunctionBody<Foo>() {
 
                 @Override public Foo invoke(final Foo foo) {
                     final Foo bar = new Foo();
@@ -65,6 +66,7 @@ public class DaoTemplateTest {
                 }
             });
 
+        assertEquals(1, updated);
         assertEquals("blaat", backend.entities.get(0).name);
     }
 }
